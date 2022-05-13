@@ -7,12 +7,12 @@ A collection of Github actions.
 Read a file
 
 
-| Inputs   |                      |
+| Inputs   | Desc                 |
 |----------|----------------------|
 | filepath | The path to the file |
 
-| Outputs |                                             |
-|---------|---------------------------------------------|
+| Outputs | Desc                    |
+|---------|-------------------------|
 | content | The content of the file |
 
 ### Usage 
