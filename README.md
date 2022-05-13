@@ -1,17 +1,19 @@
 # actions
 
+A collection of Github actions.
+
 ## read-file
 
 Read a file
 
 
-| Inputs   |                      |
-|----------|----------------------|
+| Inputs   | Desc                 |
+|:---------|:---------------------|
 | filepath | The path to the file |
 
-| Outputs |                                             |
-|---------|---------------------------------------------|
-| content | The content of the file |
+| Outputs | Desc                     |
+|:--------|:-------------------------|
+| content | The content of the file  |
 
 ### Usage 
 
@@ -29,3 +31,7 @@ steps:
       echo "${{ steps.read-the-file.outputs.content }}" 
 
 ```
+
+# Misc
+
+* [License](LICENSE.md)
