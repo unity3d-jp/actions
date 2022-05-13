@@ -1,0 +1,15 @@
+name: 'Append Markdown Local URL'
+description: 'Append a prefix to local URLs in a Markdown file'
+inputs:
+  prefix:
+    required: true
+    type: string
+    
+runs:
+  using: "composite"
+  steps:
+    - id: read-file-step
+      shell: bash
+      run: |
+        perl -pi -e '$prefix="${{ inputs.prefix }}";s/(\[.*\]\()(?!.+:\/\/)/\1$prefix/g' index.md
+
