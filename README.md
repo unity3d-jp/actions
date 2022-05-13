@@ -8,12 +8,12 @@ Read a file
 
 
 | Inputs   | Desc                 |
-|----------|----------------------|
+|:---------|:---------------------|
 | filepath | The path to the file |
 
-| Outputs | Desc                    |
-|---------|-------------------------|
-| content | The content of the file |
+| Outputs | Desc                     |
+|:--------|:-------------------------|
+| content | The content of the file  |
 
 ### Usage 
 
