@@ -2,10 +2,31 @@
 
 A collection of Github actions.
 
+## append-md-local-url
+
+Append a prefix to local URLs in a Markdown file
+
+| Inputs   | Desc                                       |
+|:---------|:-------------------------------------------|
+| prefix | The prefix to be appended |
+
+### Usage
+
+```
+steps:
+  - uses: actions/checkout@v3
+  - name: Put prefix
+    id: put-prefix
+    uses: unity3d-jp/actions/append-md-local-url@main
+    with:
+      prefix: 'foo/bar/'
+
+```
+
+
 ## read-file
 
 Read a file
-
 
 | Inputs   | Desc                 |
 |:---------|:---------------------|
