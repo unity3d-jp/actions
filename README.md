@@ -1,5 +1,7 @@
 # actions
 
+A collection of Github actions.
+
 ## read-file
 
 Read a file
@@ -29,3 +31,7 @@ steps:
       echo "${{ steps.read-the-file.outputs.content }}" 
 
 ```
+
+# Misc
+
+* [License](LICENSE.md)
