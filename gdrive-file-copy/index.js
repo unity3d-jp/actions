@@ -26,7 +26,7 @@ async function copyFile() {
     drive.files.copy({
         requestBody: {
             id: fileId,
-            name: `${targetFileName || ""}`,
+            name: targetFileName,
         },
         supportsAllDrives: true
     }).then(

@@ -86,7 +86,7 @@ const credentials = actions.getInput('credentials', {required: true});
 const fileId = actions.getInput('fileId', {required: true});
 
 /** Optional name for the new file */
-const fileName = actions.getInput('fileName', {required: false});
+const targetFileName = actions.getInput('targetFileName', {required: false});
 
 const credentialsJSON = JSON.parse(Buffer.from(credentials, 'base64').toString());
 const scopes = ['https://www.googleapis.com/auth/drive'];
@@ -102,7 +102,7 @@ async function copyFile() {
     drive.files.copy({
         requestBody: {
             id: fileId,
-            name: `${fileName || ""}`,
+            name: targetFileName,
         },
         supportsAllDrives: true
     }).then(
@@ -111,7 +111,8 @@ async function copyFile() {
             actions.info('File copied successfully to: ' + copiedFileId);
 
             actions.setOutput("copiedfileId", copiedFileId);
-            actions.setOutput("driveID", response.data.driveId);
+            actions.setOutput("copiedfileName", response.data.name);
+            actions.setOutput("driveId", response.data.driveId);
         }
     ).catch(
         e => {
