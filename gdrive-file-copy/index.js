@@ -6,7 +6,7 @@ const fs = require('fs');
 const credentials = actions.getInput('credentials', {required: true});
 
 // The source file ID
-const fileId = actions.getInput('fileId', {required: true});
+const srcFileId = actions.getInput('fileId', {required: true});
 
 // The target file name (optional)
 const targetFileName = actions.getInput('targetFileName', {required: false});
@@ -21,10 +21,10 @@ const drive = google.drive({version: 'v3', auth});
 */
  
 async function copyFile() {
-    actions.info('Copying file: ' + fileId);
+    actions.info('Copying file: ' + srcFileId);
     drive.files.copy({
         requestBody: {
-            fileId: fileId,
+            fileId: srcFileId,
             name: targetFileName,
         },
         supportsAllDrives: true
