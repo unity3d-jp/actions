@@ -1,26 +1,27 @@
-name: 'Upload to Google Drive'
-description: 'Uploads a file or a folder to Google Drive'
-author: 'Yayo Acosta'
+name: 'Copies a file on Google Drive'
+description: 'Creates a copy of a file on Google Drive'
+author: 'Sindharta Tanuwijaya'
 inputs: 
   credentials:
-    description: 'Google Service Account credentials'
+    description: 'A base64 encoded string of Google Service Account credentials'
     required: true
-  folder:
-    description: 'Google Drive folder ID to upload the file/folder to'
+  fileId:
+    description: 'The source file ID'
     required: true
-  target:
-    description: 'Local path to the file/folder to upload'
-    required: true
-  name:
-    description: 'Optional name for the zipped file'
+  targetFileName:
+    description: 'The target file name'
     required: false
-    default: null
+    default: ''
 outputs:
-  link:
-    description: 'A link to the Drive folder'
+  copiedFileId:
+    description: 'The ID of the copied file'
+  copiedFileName:
+    description: 'The file name of the copied file'
+  driveId:
+    description: 'The drive ID where the file is located'
 runs:
   using: 'node12'
   main: 'dist/index.js'
 branding:
-  icon: 'upload-cloud'  
-  color: 'orange'
+  icon: 'copy'  
+  color: 'blue'
