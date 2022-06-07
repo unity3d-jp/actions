@@ -24,7 +24,7 @@ async function copyFile() {
     actions.info('Copying file: ' + fileId);
     drive.files.copy({
         requestBody: {
-            id: fileId,
+            fileId: fileId,
             name: targetFileName,
         },
         supportsAllDrives: true
