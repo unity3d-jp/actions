@@ -1,15 +1,14 @@
 const actions = require('@actions/core');
 const {google} = require('googleapis');
 const fs = require('fs');
-const archiver = require('archiver');
 
-/** Google Service Account credentials  encoded in base64 */
+// A base64 encoded string of Google Service Account credentials
 const credentials = actions.getInput('credentials', {required: true});
 
-/** Local path to the file/folder to upload */
+// The source file ID
 const fileId = actions.getInput('fileId', {required: true});
 
-/** Optional name for the new file */
+// The target file name (optional)
 const targetFileName = actions.getInput('targetFileName', {required: false});
 
 const credentialsJSON = JSON.parse(Buffer.from(credentials, 'base64').toString());
