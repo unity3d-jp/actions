@@ -25,6 +25,44 @@ steps:
 
 ```
 
+## gdrive-file-copy
+
+Creates a copy of a file and applies any requested updates with patch semantics using the 
+[Files: copy API](https://developers.google.com/drive/api/v3/reference/files/copy)
+of Google Drive API .
+
+This API requires setting up Google Services Account (GSA). 
+
+| Inputs         | Desc                            |
+|:---------------|:--------------------------------|
+| credentials    | A base64 encoded string with your GSA credentials.|
+| fileId         | The source file ID              |
+| targetFileName | The target file name (optional) |
+
+| Outputs         | Desc                                   |
+|:----------------|:---------------------------------------|
+| copiedFileId    | The ID of the copied file            |
+| copiedFileName  | The file name of the copied file       |
+| driveId         | The drive ID where the file is located |
+
+### Usage
+
+```
+steps:
+  - uses: actions/checkout@v3
+  - name: Copy file on Google Drive
+    id: copy-file
+    uses: unity3d-jp/actions/gdrive-file-copy@main
+    with:
+      credentials: ${{ secrets.DRIVE_CREDENTIALS }}
+      fileId: 'file-id-on-google-drive'
+      targetFileName: 'new-foo-file'
+  - name: Print copied file ID
+    id: print-file-id
+    run: |
+      echo "Copied file ID: ${{ steps.copy-file.outputs.copiedFileId }}, on drive ID: ${{ steps.copy-file.outputs.driveId }}" 
+
+```
 
 ## read-file
 
