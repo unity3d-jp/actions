@@ -1,0 +1,27 @@
+name: 'Copies a file on Google Drive'
+description: 'Creates a copy of a file on Google Drive'
+author: 'Sindharta Tanuwijaya'
+inputs: 
+  credentials:
+    description: 'A base64 encoded string of Google Service Account credentials'
+    required: true
+  fileId:
+    description: 'The source file ID'
+    required: true
+  targetFileName:
+    description: 'The target file name'
+    required: false
+    default: ''
+outputs:
+  copiedFileId:
+    description: 'The ID of the copied file'
+  copiedFileName:
+    description: 'The file name of the copied file'
+  driveId:
+    description: 'The drive ID where the file is located'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'copy'  
+  color: 'blue'
