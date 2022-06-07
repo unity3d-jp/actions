@@ -31,7 +31,7 @@ Creates a copy of a file and applies any requested updates with patch semantics 
 [Files: copy API](https://developers.google.com/drive/api/v3/reference/files/copy)
 of Google Drive API .
 
-This API requires setting up Google Services Account (GSA). 
+This API requires setting up [Google Services Account (GSA)](GoogleServicesAccount.md). 
 
 | Inputs         | Desc                            |
 |:---------------|:--------------------------------|
