@@ -35,7 +35,7 @@ This API requires setting up [Google Services Account (GSA)](GoogleServicesAccou
 
 | Inputs         | Desc                            |
 |:---------------|:--------------------------------|
-| credentials    | A base64 encoded string with your GSA credentials.|
+| credentials    | A base64 encoded string of Google Service Account credentials.|
 | fileId         | The source file ID              |
 | targetFileName | The target file name (optional) |
 
