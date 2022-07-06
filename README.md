@@ -4,7 +4,10 @@ A collection of Github actions.
 
 ## append-md-local-url
 
-Append a prefix to local URLs in a Markdown file
+Append a prefix to local URLs in a Markdown file, except for the following links:    
+1. full URLs, e.g: `[](https://github.com/unity3d-jp/actions)`
+2. local anchors, e.g: `[](#append)`.
+
 
 | Inputs   | Desc                                       |
 |:---------|:-------------------------------------------|
