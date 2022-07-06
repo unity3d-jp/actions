@@ -14,5 +14,5 @@ runs:
     - id: append-local-url
       shell: bash
       run: |
-        perl -pi -e '$prefix="${{ inputs.prefix }}";s/(\[.*\]\()(?!.+:\/\/)/\1$prefix/g' ${{ inputs.filepath }}
+        perl -pi -e '$prefix="${{ inputs.prefix }}";s/(\[.*\]\()(?!(.+:\/\/|#.+))/\1$prefix/g' ${{ inputs.filepath }}
 
