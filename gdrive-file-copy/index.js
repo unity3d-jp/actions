@@ -25,11 +25,12 @@ async function copyFile() {
     drive.files.copy({
         fileId: srcFileId,
         name: targetFileName,
+        title: targetFileName,
         supportsAllDrives: true
     }).then(
         (response) => {
             const copiedFileId = response.data.id;
-            actions.info('File copied successfully to: ' + copiedFileId);
+            actions.info('File copied successfully to: ' + copiedFileId + ', with name: ' + response.data.name);
 
             actions.setOutput("copiedfileId", copiedFileId);
             actions.setOutput("copiedfileName", response.data.name);
