@@ -22,10 +22,14 @@ const drive = google.drive({version: 'v3', auth});
  
 async function copyFile() {
     actions.info('Copying file: ' + srcFileId + ' to ' + targetFileName);
+
+    const copyRequest = {
+        name: targetFileName
+    };
+    
     drive.files.copy({
         fileId: srcFileId,
-        name: targetFileName,
-        title: targetFileName,
+        requestBody: copyRequest,
         supportsAllDrives: true
     }).then(
         (response) => {
