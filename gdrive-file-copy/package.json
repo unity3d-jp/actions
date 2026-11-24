@@ -12,6 +12,6 @@
   "dependencies": {
     "@actions/core": "^1.8.2",
     "@actions/github": "^5.0.3",
-    "googleapis": "^100.0.0"
+    "googleapis": "^190.0.0"
   }
 }
